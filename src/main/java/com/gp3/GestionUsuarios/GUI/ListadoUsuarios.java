@@ -1,7 +1,3 @@
-/*
- * Created by JFormDesigner on Tue Jan 01 13:37:50 CET 2019
- */
-
 package com.gp3.GestionUsuarios.GUI;
 
 
@@ -9,15 +5,10 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 
-/**
- * @author o6863265urykmpdv
- */
+
 public class ListadoUsuarios extends JFrame{
 
     private JLabel lblLoading;
-
-    // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - taxpkhqr
     private JScrollPane scrollPane1;
     private JTable tableUsuarios;
     private JTextField txtBuscar;
@@ -26,8 +17,6 @@ public class ListadoUsuarios extends JFrame{
     private JButton btnModificar;
     private JButton btnAdd;
     private JButton btnBorrar;
-
-    // JFormDesigner - End of variables declaration  //GEN-END:variables
 
     public ListadoUsuarios() {
         initComponents();
@@ -39,8 +28,6 @@ public class ListadoUsuarios extends JFrame{
         setTitle("Gestion Usuarios");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-        // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - taxpkhqr
         scrollPane1 = new JScrollPane();
         tableUsuarios = new JTable(){
             @Override
@@ -55,25 +42,20 @@ public class ListadoUsuarios extends JFrame{
         btnAdd = new JButton();
         btnBorrar = new JButton();
 
-        //======== this ========
         Container contentPane = getContentPane();
 
-        //======== scrollPane1 ========
-        {
+        tableUsuarios.setModel(new DefaultTableModel(
+            new Object[][] {
+            },
+            new String[] {
+                "ID", "Usuario", "Rol"
+            }
+        ));
+        tableUsuarios.setAlignmentX(5.5F);
+        tableUsuarios.setRowHeight(25);
+        tableUsuarios.setFont(new Font("Arial", Font.PLAIN, 12));
+        scrollPane1.setViewportView(tableUsuarios);
 
-            //---- tableUsuarios ----
-            tableUsuarios.setModel(new DefaultTableModel(
-                new Object[][] {
-                },
-                new String[] {
-                    "ID", "Usuario", "Rol"
-                }
-            ));
-            tableUsuarios.setAlignmentX(5.5F);
-            tableUsuarios.setRowHeight(25);
-            tableUsuarios.setFont(new Font("Arial", Font.PLAIN, 12));
-            scrollPane1.setViewportView(tableUsuarios);
-        }
 
         //---- txtBuscar ----
         txtBuscar.setFont(new Font("Tahoma", Font.PLAIN, 12));
@@ -142,8 +124,6 @@ public class ListadoUsuarios extends JFrame{
 
         pack();
         setLocationRelativeTo(null);
-        // JFormDesigner - End of component initialization  //GEN-END:initComponents
-
     }
 
     private void nativeLookAndFeel(){
@@ -226,4 +206,5 @@ public class ListadoUsuarios extends JFrame{
     public void setBtnBorrar(JButton btnBorrar) {
         this.btnBorrar = btnBorrar;
     }
+
 }

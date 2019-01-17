@@ -1,7 +1,7 @@
 package com.gp3.GestionUsuarios.GUI;
 
+import com.gp3.GestionUsuarios.Main;
 import com.gp3.GestionUsuarios.Modelos.GUI.JTextFieldLimit;
-
 import javax.swing.*;
 import java.awt.*;
 

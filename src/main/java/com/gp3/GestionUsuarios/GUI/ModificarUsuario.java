@@ -1,7 +1,3 @@
-/*
- * Created by JFormDesigner on Mon Jan 07 13:03:06 CET 2019
- */
-
 package com.gp3.GestionUsuarios.GUI;
 
 import com.gp3.GestionUsuarios.Modelos.GUI.JFieldPlaceHolder;
@@ -10,21 +6,15 @@ import com.gp3.GestionUsuarios.Modelos.Tablas.Usuarios.Usuarios;
 import org.apache.commons.codec.digest.DigestUtils;
 
 import java.awt.*;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
 import javax.swing.*;
 import javax.swing.GroupLayout;
 
-/**
- * @author taxpkhqr
- */
-public class ModificarUsuario extends JDialog{
+
+public class ModificarUsuario extends JDialog {
 
     private JFrame owner;
     private Usuarios user;
     private String oldPassword;
-    // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - taxpkhqr
     private JLabel lblUsuario;
     private JTextField txtUsuario;
     private JLabel lblPassword;
@@ -35,7 +25,6 @@ public class ModificarUsuario extends JDialog{
     private JLabel lblRol;
     private JButton btnModificar;
     private JCheckBox cbPassword;
-    // JFormDesigner - End of variables declaration  //GEN-END:variables
 
     public ModificarUsuario(JFrame owner) {
         this.owner = owner;
@@ -44,8 +33,6 @@ public class ModificarUsuario extends JDialog{
 
     private void initComponents() {
 
-        // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - taxpkhqr
         lblUsuario = new JLabel();
         txtUsuario = new JTextField();
         lblPassword = new JLabel();
@@ -57,120 +44,119 @@ public class ModificarUsuario extends JDialog{
         btnModificar = new JButton();
         cbPassword = new JCheckBox();
 
-        //======== dialog ========
-        {
-            setModalityType(ModalityType.APPLICATION_MODAL);
-            setTitle("Modificar Usuario");
-            setResizable(false);
-            Container dialogContentPane = getContentPane();
 
-            //---- lblUsuario ----
-            lblUsuario.setText("Nombre de Usuario");
-            lblUsuario.setFont(new Font("Tahoma", Font.BOLD, 14));
+        setModalityType(ModalityType.APPLICATION_MODAL);
+        setTitle("Modificar Usuario");
+        setResizable(false);
+        Container dialogContentPane = getContentPane();
 
-            //---- txtUsuario ----
-            txtUsuario.setFont(new Font("Tahoma", Font.PLAIN, 14));
-            txtUsuario.setDocument(new JTextFieldLimit(20));
+        //---- lblUsuario ----
+        lblUsuario.setText("Nombre de Usuario");
+        lblUsuario.setFont(new Font("Tahoma", Font.BOLD, 14));
 
-            //---- lblPassword ----
-            lblPassword.setText("Contrase\u00f1a");
-            lblPassword.setFont(new Font("Tahoma", Font.BOLD, 14));
+        //---- txtUsuario ----
+        txtUsuario.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        txtUsuario.setDocument(new JTextFieldLimit(20));
 
-            //---- txtPassword ----
-            txtPassword.setFont(new Font("Tahoma", Font.PLAIN, 14));
-            txtPassword.setEnabled(false);
-            txtPassword.addKeyListener(new JFieldPlaceHolder(txtPassword, "password"));
+        //---- lblPassword ----
+        lblPassword.setText("Contraseña");
+        lblPassword.setFont(new Font("Tahoma", Font.BOLD, 14));
 
-            //---- lblPasswordRepeat ----
-            lblPasswordRepeat.setText("Repetir Contrase\u00f1a");
-            lblPasswordRepeat.setFont(new Font("Tahoma", Font.BOLD, 14));
+        //---- txtPassword ----
+        txtPassword.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        txtPassword.setEnabled(false);
+        txtPassword.addKeyListener(new JFieldPlaceHolder(txtPassword, "password"));
 
-            //---- txtPasswordRepeat ----
-            txtPasswordRepeat.setFont(new Font("Tahoma", Font.PLAIN, 14));
-            txtPasswordRepeat.setEnabled(false);
-            txtPasswordRepeat.addKeyListener(new JFieldPlaceHolder(txtPasswordRepeat, "password"));
+        //---- lblPasswordRepeat ----
+        lblPasswordRepeat.setText("Repetir Contraseña");
+        lblPasswordRepeat.setFont(new Font("Tahoma", Font.BOLD, 14));
 
-            //---- comboRol ----
-            comboRol.setFont(new Font("Tahoma", Font.PLAIN, 14));
-            comboRol.setModel(new DefaultComboBoxModel<>(new String[] {
+        //---- txtPasswordRepeat ----
+        txtPasswordRepeat.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        txtPasswordRepeat.setEnabled(false);
+        txtPasswordRepeat.addKeyListener(new JFieldPlaceHolder(txtPasswordRepeat, "password"));
+
+        //---- comboRol ----
+        comboRol.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        comboRol.setModel(new DefaultComboBoxModel<>(new String[]{
                 "Moderador",
                 "Usuario"
-            }));
+        }));
 
-            //---- lblRol ----
-            lblRol.setText("Rol");
-            lblRol.setFont(new Font("Tahoma", Font.BOLD, 14));
+        //---- lblRol ----
+        lblRol.setText("Rol");
+        lblRol.setFont(new Font("Tahoma", Font.BOLD, 14));
 
-            //---- btnModificar ----
-            btnModificar.setText("Modificar Usuario");
-            btnModificar.setFont(new Font("Tahoma", Font.BOLD, 14));
+        //---- btnModificar ----
+        btnModificar.setText("Modificar");
+        btnModificar.setFont(new Font("Tahoma", Font.BOLD, 14));
 
-            //---- cbPassword ----
-            cbPassword.setText("Cambiar Contrase\u00f1a");
-            cbPassword.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        //---- cbPassword ----
+        cbPassword.setText("Cambiar Contrase\u00f1a");
+        cbPassword.setFont(new Font("Tahoma", Font.PLAIN, 14));
 
-            GroupLayout dialogContentPaneLayout = new GroupLayout(dialogContentPane);
-            dialogContentPane.setLayout(dialogContentPaneLayout);
-            dialogContentPaneLayout.setHorizontalGroup(
-                dialogContentPaneLayout.createParallelGroup()
-                    .addGroup(dialogContentPaneLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addGroup(dialogContentPaneLayout.createParallelGroup()
-                            .addComponent(cbPassword)
-                            .addComponent(lblUsuario)
-                            .addComponent(txtUsuario, GroupLayout.PREFERRED_SIZE, 200, GroupLayout.PREFERRED_SIZE)
-                            .addGroup(dialogContentPaneLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                .addComponent(comboRol)
-                                .addComponent(lblRol)
-                                .addComponent(lblPasswordRepeat)
-                                .addComponent(txtPasswordRepeat)
-                                .addComponent(lblPassword)
-                                .addComponent(txtPassword, GroupLayout.PREFERRED_SIZE, 200, GroupLayout.PREFERRED_SIZE)
-                                .addGroup(dialogContentPaneLayout.createSequentialGroup()
-                                    .addGap(25, 25, 25)
-                                    .addComponent(btnModificar, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap(30, Short.MAX_VALUE))
-            );
-            dialogContentPaneLayout.setVerticalGroup(
-                dialogContentPaneLayout.createParallelGroup()
-                    .addGroup(dialogContentPaneLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(lblUsuario)
-                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtUsuario, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+        GroupLayout dialogContentPaneLayout = new GroupLayout(dialogContentPane);
+        dialogContentPane.setLayout(dialogContentPaneLayout);
+
+        dialogContentPaneLayout.setHorizontalGroup(
+            dialogContentPaneLayout.createParallelGroup()
+                .addGroup(dialogContentPaneLayout.createSequentialGroup()
+                    .addGap(30, 30, 30)
+                    .addGroup(dialogContentPaneLayout.createParallelGroup()
                         .addComponent(cbPassword)
-                        .addGap(18, 18, 18)
-                        .addComponent(lblPassword)
-                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtPassword, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(lblPasswordRepeat)
-                        .addGap(6, 6, 6)
-                        .addComponent(txtPasswordRepeat, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(lblRol)
-                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(comboRol, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnModificar, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(25, Short.MAX_VALUE))
-            );
-            pack();
-            setLocationRelativeTo(null);
-        }
-        // JFormDesigner - End of component initialization  //GEN-END:initComponents
+                        .addComponent(lblUsuario)
+                        .addComponent(txtUsuario, GroupLayout.PREFERRED_SIZE, 200, GroupLayout.PREFERRED_SIZE)
+                        .addGroup(dialogContentPaneLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                            .addComponent(comboRol)
+                            .addComponent(lblRol)
+                            .addComponent(lblPasswordRepeat)
+                            .addComponent(txtPasswordRepeat)
+                            .addComponent(lblPassword)
+                            .addComponent(txtPassword, GroupLayout.PREFERRED_SIZE, 200, GroupLayout.PREFERRED_SIZE)
+                            .addGroup(dialogContentPaneLayout.createSequentialGroup()
+                                .addGap(25, 25, 25)
+                                .addComponent(btnModificar, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE))))
+                    .addContainerGap(30, Short.MAX_VALUE))
+        );
+        dialogContentPaneLayout.setVerticalGroup(
+            dialogContentPaneLayout.createParallelGroup()
+                .addGroup(dialogContentPaneLayout.createSequentialGroup()
+                    .addGap(20, 20, 20)
+                    .addComponent(lblUsuario)
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(txtUsuario, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                    .addGap(18, 18, 18)
+                    .addComponent(cbPassword)
+                    .addGap(18, 18, 18)
+                    .addComponent(lblPassword)
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(txtPassword, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                    .addGap(18, 18, 18)
+                    .addComponent(lblPasswordRepeat)
+                    .addGap(6, 6, 6)
+                    .addComponent(txtPasswordRepeat, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                    .addGap(18, 18, 18)
+                    .addComponent(lblRol)
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(comboRol, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                    .addGap(18, 18, 18)
+                    .addComponent(btnModificar, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(25, Short.MAX_VALUE))
+        );
+        pack();
+        setLocationRelativeTo(null);
+
     }
 
-    private void refreshUser(){
+    private void refreshUser() {
         this.user.setNombre(this.txtUsuario.getText());
-        if(this.getCbPassword().isSelected()){
+        if (this.getCbPassword().isSelected()) {
             this.user.setPassword(DigestUtils.sha256Hex(String.valueOf(this.getTxtPassword().getPassword())));
-        }else{
+        } else {
             this.user.setPassword(this.oldPassword);
         }
 
-        this.user.setRole(this.comboRol.getSelectedIndex()+2);
+        this.user.setRole(this.comboRol.getSelectedIndex() + 2);
     }
 
     public JFrame getOwner() {
@@ -277,36 +263,5 @@ public class ModificarUsuario extends JDialog{
 
     public void setCbPassword(JCheckBox cbPassword) {
         this.cbPassword = cbPassword;
-    }
-
-    private FocusListener passwordPlaceholder(Component component){
-
-        return new FocusListener() {
-            boolean hasChange = false;
-
-            @Override
-            public void focusGained(FocusEvent e) {
-                if(!hasChange){
-                    ((JPasswordField) e.getComponent()).setText("");
-                }
-            }
-
-            @Override
-            public void focusLost(FocusEvent e) {
-                if(((JPasswordField)e.getComponent()).getPassword().length==0){
-                    ((JPasswordField) e.getComponent()).setText("password");
-                    e.getComponent().setForeground(Color.LIGHT_GRAY);
-                }else{
-                    hasChange = true;
-                    e.getComponent().setForeground(Color.BLACK);
-                }
-            }
-
-            public FocusListener init(Component component){
-                focusLost(new FocusEvent(component, FocusEvent.FOCUS_LOST));
-                return this;
-            }
-
-        }.init(component);
     }
 }

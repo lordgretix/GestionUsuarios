@@ -1,7 +1,7 @@
 package com.gp3.GestionUsuarios.Controladores;
 
 import com.gp3.GestionUsuarios.GUI.ListadoUsuarios;
-import com.gp3.GestionUsuarios.GUI.Loggin;
+import com.gp3.GestionUsuarios.GUI.Login;
 import com.gp3.GestionUsuarios.GUI.ModificarUsuario;
 import com.gp3.GestionUsuarios.GUI.NuevoUsuario;
 import com.gp3.GestionUsuarios.Main;
@@ -18,7 +18,7 @@ import java.util.Arrays;
 
 public class Eventos {
 
-    public static void setLogginListenners(Loggin window){
+    public static void setLogginListenners(Login window){
 
         KeyboardFocusManager.getCurrentKeyboardFocusManager().addKeyEventDispatcher(new KeyEventDispatcher() {
             boolean dispatched = false;

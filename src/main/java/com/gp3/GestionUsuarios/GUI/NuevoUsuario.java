@@ -3,7 +3,6 @@ package com.gp3.GestionUsuarios.GUI;
 import com.gp3.GestionUsuarios.Modelos.GUI.JTextFieldLimit;
 import com.gp3.GestionUsuarios.Modelos.Tablas.Usuarios.Usuarios;
 import org.apache.commons.codec.digest.DigestUtils;
-
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.GroupLayout;
@@ -13,9 +12,6 @@ public class NuevoUsuario extends JDialog{
 
     private JFrame owner;
     private Usuarios user;
-
-    // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - taxpkhqr
     private JLabel lblUsuario;
     private JTextField txtUsuario;
     private JLabel lblPassword;
@@ -25,7 +21,7 @@ public class NuevoUsuario extends JDialog{
     private JComboBox<String> comboRol;
     private JLabel lblRol;
     private JButton btnCrear;
-    // JFormDesigner - End of variables declaration  //GEN-END:variables
+
 
     public NuevoUsuario(JFrame owner) {
         this.owner = owner;
@@ -34,8 +30,7 @@ public class NuevoUsuario extends JDialog{
     }
 
     private void initComponents() {
-        // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - taxpkhqr
+
         lblUsuario = new JLabel();
         txtUsuario = new JTextField();
         lblPassword = new JLabel();
@@ -46,7 +41,6 @@ public class NuevoUsuario extends JDialog{
         lblRol = new JLabel();
         btnCrear = new JButton();
 
-        //======== this ========
         setModalityType(ModalityType.APPLICATION_MODAL);
         setTitle("Nuevo Usuario");
         setResizable(false);
@@ -134,7 +128,7 @@ public class NuevoUsuario extends JDialog{
         );
         pack();
         setLocationRelativeTo(null);
-        // JFormDesigner - End of component initialization  //GEN-END:initComponents
+
     }
 
     private void refreshUser(){

@@ -81,22 +81,17 @@
                 <version>1.8</version>
                 <executions>
                     <execution>
+                        <id>cleanDir</id>
                         <phase>package</phase>
                         <goals>
                             <goal>run</goal>
                         </goals>
                         <configuration>
-                            <target>
-                                <delete dir="${project.build.directory}/antrun/" includeemptydirs="true"/>
-                                <delete dir="${project.build.directory}/generated-sources/" includeemptydirs="true"/>
-                                <delete dir="${project.build.directory}/maven-archiver/" includeemptydirs="true"/>
-                                <delete dir="${project.build.directory}/maven-status/" includeemptydirs="true"/>
-
-                                <delete dir="${project.build.outputDirectory}/com/" includeemptydirs="true"/>
+                            <tasks>
                                 <delete dir="${project.build.outputDirectory}/com/" includeemptydirs="true"/>
                                 <delete file="${project.build.outputDirectory}/hibernate.cfg.xml"/>
                                 <delete file="${project.build.outputDirectory}/log4j2.xml"/>
-                            </target>
+                            </tasks>
                         </configuration>
                     </execution>
                 </executions>

@@ -6,14 +6,11 @@ import com.gp3.GestionUsuarios.GUI.ListadoUsuarios;
 import com.gp3.GestionUsuarios.GUI.Login;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import java.awt.*;
-
 
 public class Main {
 
     public final static Logger LOGGER = LogManager.getLogger("com.gp3.GestionUsuarios.Main");
-
 
     public static void main(String[] args) {
         System.setProperty("com.mchange.v2.log.FallbackMLog.DEFAULT_CUTOFF_LEVEL", "WARNING");
@@ -49,6 +46,5 @@ public class Main {
             }
         });
     }
-
 
 }
