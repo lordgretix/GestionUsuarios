@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Appenders>
+        <Console name="console">
+            <PatternLayout>
+                <Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n</Pattern>
+            </PatternLayout>
+        </Console>
+
+        <RollingFile name="file">
+            <FileName>logs/GestionUsuarios.log</FileName>
+            <FilePattern>logs/$${date:y-MM}/GestionUsuarios-%d{MM-dd-yyyy}-%i.log.zip</FilePattern>
+            <PatternLayout>
+                <Pattern>[%d{yyyy-MM-dd HH:mm:ss}] [%p] %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="10MB"/>
+            </Policies>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="org.hibernate" level="warn" additivity="false">
+            <AppenderRef ref="console"/>
+        </Logger>
+
+        <Logger name="com.gp3.GestionUsuarios.Main" level="info" additivity="false">
+            <AppenderRef ref="file"/>
+        </Logger>
+
+        <Root level="info" additivity="false">
+            <AppenderRef ref="console"/>
+        </Root>
+    </Loggers>
+
+</Configuration>

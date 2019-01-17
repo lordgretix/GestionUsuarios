@@ -1,0 +1,93 @@
+JFDML JFormDesigner: "6.0.4.1.172" Java: "1.8.0_152-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JDialog", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq l {space :p:30:p, par l:::p {comp comboBox1:::::x, comp label4:::p::p, comp label3:::p::p, comp passwordField2:::::x, comp label2:::p::p, comp label1:::p::p, comp textField1::l::200:x, comp passwordField1::l:::x, seq l {space :p:25:p, comp button1:::p:150:p}}, space :p:30:p}}"
+			"$verticalGroup": "par l {seq {space :p:20:p, comp label1:::p::p, space :::p, comp textField1:::p::p, space :p:18:p, comp label2:::p::p, space :::p, comp passwordField1:::p::p, space s:::p, comp label3:::p::p, space :6:6:p, comp passwordField2:::p::p, space s:::p, comp label4:::p::p, space :::p, comp comboBox1:::p::p, space s:::p, comp button1:::p:30:p, space ::25:x}}"
+		} ) {
+			name: "this"
+			"modalityType": enum java.awt.Dialog$ModalityType APPLICATION_MODAL
+			"title": "Nuevo Usuario"
+			"resizable": false
+			"$locationPolicy": 1
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "Nombre de Usuario"
+				"font": &Font0 new java.awt.Font( "Tahoma", 1, 14 )
+				auxiliary() {
+					"JavaCodeGenerator.variableName": "lblUsuario"
+				}
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField1"
+				"font": new java.awt.Font( "Tahoma", 0, 14 )
+				auxiliary() {
+					"JavaCodeGenerator.variableName": "txtUsuario"
+				}
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "Contraseña"
+				"font": #Font0
+				auxiliary() {
+					"JavaCodeGenerator.variableName": "lblPassword"
+				}
+			} )
+			add( new FormComponent( "javax.swing.JPasswordField" ) {
+				name: "passwordField1"
+				"font": new java.awt.Font( "Tahoma", 0, 14 )
+				auxiliary() {
+					"JavaCodeGenerator.variableName": "txtPassword"
+				}
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label3"
+				"text": "Repetir Contraseña"
+				"font": #Font0
+				auxiliary() {
+					"JavaCodeGenerator.variableName": "lblPasswordRepeat"
+				}
+			} )
+			add( new FormComponent( "javax.swing.JPasswordField" ) {
+				name: "passwordField2"
+				"font": new java.awt.Font( "Tahoma", 0, 14 )
+				auxiliary() {
+					"JavaCodeGenerator.variableName": "txtPasswordRepeat"
+				}
+			} )
+			add( new FormComponent( "javax.swing.JComboBox" ) {
+				name: "comboBox1"
+				"font": new java.awt.Font( "Tahoma", 0, 14 )
+				"model": new javax.swing.DefaultComboBoxModel {
+					selectedItem: "Moderador"
+					addElement( "Moderador" )
+					addElement( "Usuario" )
+				}
+				auxiliary() {
+					"JavaCodeGenerator.variableName": "comboRol"
+				}
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label4"
+				"text": "Rol"
+				"font": #Font0
+				auxiliary() {
+					"JavaCodeGenerator.variableName": "lblRol"
+				}
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button1"
+				"text": "Crear Usuario"
+				"font": new java.awt.Font( "Tahoma", 1, 14 )
+				auxiliary() {
+					"JavaCodeGenerator.variableName": "btnCrear"
+				}
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 10, 0 )
+			"size": new java.awt.Dimension( 262, 363 )
+		} )
+	}
+}
