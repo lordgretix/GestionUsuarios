@@ -6,7 +6,7 @@
 
     <groupId>com.gp3.GestionUsuarios</groupId>
     <artifactId>GestionUsuarios</artifactId>
-    <version>1.1</version>
+    <version>1.1.1</version>
     <build>
         <finalName>GestionUsuarios</finalName>
         <outputDirectory>${project.build.directory}/Releases/${project.build.finalName}-${project.version}</outputDirectory>

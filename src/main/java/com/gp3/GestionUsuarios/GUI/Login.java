@@ -5,7 +5,7 @@ import com.gp3.GestionUsuarios.Modelos.GUI.JTextFieldLimit;
 import javax.swing.*;
 import java.awt.*;
 
-public class Loggin extends JFrame{
+public class Login extends JFrame{
 
     private JTextField txtUsuario;
     private JPasswordField txtPassword;
@@ -18,7 +18,7 @@ public class Loggin extends JFrame{
     /**
      * Create the application.
      */
-    public Loggin() {
+    public Login() {
         initialize();
     }
 

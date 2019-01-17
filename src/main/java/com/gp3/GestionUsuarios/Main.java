@@ -3,7 +3,7 @@ package com.gp3.GestionUsuarios;
 import com.gp3.GestionUsuarios.Controladores.Eventos;
 import com.gp3.GestionUsuarios.Controladores.UsuariosMannager;
 import com.gp3.GestionUsuarios.GUI.ListadoUsuarios;
-import com.gp3.GestionUsuarios.GUI.Loggin;
+import com.gp3.GestionUsuarios.GUI.Login;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -23,7 +23,7 @@ public class Main {
 
         EventQueue.invokeLater(() -> {
             try {
-                Loggin logWindow = new Loggin();
+                Login logWindow = new Login();
                 logWindow.setVisible(true);
 
                 Eventos.setLogginListenners(logWindow);
