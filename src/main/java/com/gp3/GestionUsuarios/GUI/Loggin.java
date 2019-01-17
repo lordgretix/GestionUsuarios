@@ -33,7 +33,7 @@ public class Loggin extends JFrame{
         setResizable(false);
         getContentPane().setLayout(null);
 
-        lblLoading = new JLabel(new ImageIcon(this.getClass().getResource("/com/gp3/Resources/Icons/loading2.gif")));
+        lblLoading = new JLabel(new ImageIcon(Main.class.getResource("Resources/Icons/loading2.gif")));
         lblLoading.setBounds(90, 46, 100, 100);
         lblLoading.setVisible(false);
         getContentPane().add(lblLoading);

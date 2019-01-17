@@ -20,7 +20,7 @@
         <!-- <property name="hbm2ddl.auto">update</property> -->
 
         <!-- List of XML mapping files -->
-        <mapping resource = "com/gp3/Resources/Modelos/Tablas/Usuarios/Usuarios.hbm.xml"/>
+        <mapping resource = "com/gp3/GestionUsuarios/Resources/Modelos/Tablas/Usuarios/Usuarios.hbm.xml"/>
 
     </session-factory>
 
