@@ -132,7 +132,7 @@ public class NuevoUsuario extends JDialog{
     }
 
     private void refreshUser(){
-        this.user.setNombre(this.txtUsuario.getText());
+        this.user.setUsuario(this.txtUsuario.getText());
         this.user.setPassword(DigestUtils.sha256Hex(String.valueOf(this.getTxtPassword().getPassword())));
         this.user.setRole(this.comboRol.getSelectedIndex()+2);
     }

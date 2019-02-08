@@ -104,7 +104,7 @@ public class Eventos {
 
             Usuarios user = UsuariosMannager.getInstance().getUsuario(Integer.parseInt(window.getTableUsuarios().getValueAt(window.getTableUsuarios().getSelectedRow(), 0).toString()));
             mu.setUser(user);
-            mu.getTxtUsuario().setText(user.getNombre());
+            mu.getTxtUsuario().setText(user.getUsuario());
             mu.getComboRol().setSelectedIndex(user.getRole()-2);
             mu.setVisible(true);
 
@@ -171,7 +171,7 @@ public class Eventos {
             UsuariosMannager.getInstance().getUsers().forEach(user ->
                 model.addRow(new Object[]{
                         user.getId(),
-                        user.getNombre(),
+                        user.getUsuario(),
                         UsuariosMannager.getInstance().getRoleAsString(user.getRole())
                 }));
         }

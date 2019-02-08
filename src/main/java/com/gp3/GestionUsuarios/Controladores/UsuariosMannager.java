@@ -49,7 +49,7 @@ public class UsuariosMannager {
 
         try{
             trans = session.beginTransaction();
-            List users = session.createQuery("FROM Usuarios WHERE nombre = '"+username+"' AND password = '"+password+"'").list();
+            List users = session.createQuery("FROM Usuarios WHERE usuario = '"+username+"' AND password = '"+password+"'").list();
 
             if (users.size()>0){
                 loggedUser = (Usuarios) users.get(0);
@@ -72,7 +72,7 @@ public class UsuariosMannager {
     }
 
     public void logOut(){
-        LOGGER.info("Session Finalizada (Username: "+loggedUser.getNombre()+")");
+        LOGGER.info("Session Finalizada (Username: "+loggedUser.getUsuario()+")");
         loggedUser = null;
     }
 
@@ -151,7 +151,7 @@ public class UsuariosMannager {
             session.update(user);
             trans.commit();
 
-            LOGGER.warn("Actualizado Usuario (Username: "+user.getNombre()+" , ID: "+user.getId()+") por el usuario (Username: "+loggedUser.getNombre()+" , ID: "+loggedUser.getId()+")");
+            LOGGER.warn("Actualizado Usuario (Username: "+user.getUsuario()+" , ID: "+user.getId()+") por el usuario (Username: "+loggedUser.getUsuario()+" , ID: "+loggedUser.getId()+")");
 
         }catch (HibernateException e) {
             if (trans!=null) trans.rollback();
@@ -170,7 +170,7 @@ public class UsuariosMannager {
             session.save(user);
             trans.commit();
 
-            LOGGER.warn("Creado nuevo Usuario (Username: "+user.getNombre()+" , ID: "+user.getId()+") por el usuario (Username: "+loggedUser.getNombre()+" , ID: "+loggedUser.getId()+")");
+            LOGGER.warn("Creado nuevo Usuario (Username: "+user.getUsuario()+" , ID: "+user.getId()+") por el usuario (Username: "+loggedUser.getUsuario()+" , ID: "+loggedUser.getId()+")");
 
         }catch (HibernateException e) {
             if (trans!=null) trans.rollback();
@@ -191,7 +191,7 @@ public class UsuariosMannager {
             session.remove(user);
             trans.commit();
 
-            LOGGER.warn("Borrado Usuario (Username: "+user.getNombre()+" , ID: "+user.getId()+") por el usuario (Username: "+loggedUser.getNombre()+" , ID: "+loggedUser.getId()+")");
+            LOGGER.warn("Borrado Usuario (Username: "+user.getUsuario()+" , ID: "+user.getId()+") por el usuario (Username: "+loggedUser.getUsuario()+" , ID: "+loggedUser.getId()+")");
 
         }catch (HibernateException e) {
             if (trans!=null) trans.rollback();

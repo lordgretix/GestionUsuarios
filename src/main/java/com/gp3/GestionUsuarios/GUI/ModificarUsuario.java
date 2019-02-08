@@ -149,7 +149,7 @@ public class ModificarUsuario extends JDialog {
     }
 
     private void refreshUser() {
-        this.user.setNombre(this.txtUsuario.getText());
+        this.user.setUsuario(this.txtUsuario.getText());
         if (this.getCbPassword().isSelected()) {
             this.user.setPassword(DigestUtils.sha256Hex(String.valueOf(this.getTxtPassword().getPassword())));
         } else {

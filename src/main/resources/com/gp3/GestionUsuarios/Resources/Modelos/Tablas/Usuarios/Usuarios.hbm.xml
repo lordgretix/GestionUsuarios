@@ -14,9 +14,12 @@
             <generator class="native"/>
         </id>
 
-        <property name="nombre" column="nombre" type="string"/>
+        <property name="usuario" column="usuario" type="string"/>
         <property name="password" column="password" type="string"/>
         <property name="role" column="role" type="int"/>
+        <property name="nombre" column="nombre" type="string"/>
+        <property name="apellidos" column="apellidos" type="string"/>
+        <property name="email" column="email" type="string"/>
 
     </class>
 </hibernate-mapping>
