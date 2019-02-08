@@ -17,7 +17,10 @@ import java.util.Arrays;
 
 
 public class Eventos {
-
+    /**
+     * Crea los eventos para la ventana de loggin
+     * @param window el Jframe
+     */
     public static void setLogginListenners(Login window){
 
         KeyboardFocusManager.getCurrentKeyboardFocusManager().addKeyEventDispatcher(new KeyEventDispatcher() {
@@ -61,6 +64,10 @@ public class Eventos {
         });
     }
 
+    /**
+     * Crea los eventos para la ventana de listado de usuario
+     * @param window el Jframe
+     */
     public static void setListadoUsuariosListenners(ListadoUsuarios window){
 
         WindowAdapter wAdapter = new WindowAdapter() {
@@ -160,6 +167,10 @@ public class Eventos {
         refreshUsersTable(window);
     }
 
+    /**
+     * Actualiza la tabla de usuarios
+     * @param window el Jframe
+     */
     private static void refreshUsersTable(ListadoUsuarios window){
 
         new Thread(() -> {
@@ -178,6 +189,10 @@ public class Eventos {
         ).start();
     }
 
+    /**
+     * Crea los eventos para la ventana de nuevo usuario
+     * @param window el Jframe
+     */
     public static void setNuevoUsuarioListenners(NuevoUsuario window){
 
         window.getBtnCrear().addActionListener(e -> {
@@ -201,6 +216,10 @@ public class Eventos {
 
     }
 
+    /**
+     * Crea los eventos para la ventana de modificar usuario
+     * @param window el Jframe
+     */
     public static void setModificarUsuariosListenners(ModificarUsuario window){
 
         window.getCbPassword().addActionListener(e -> {
@@ -225,6 +244,12 @@ public class Eventos {
 
     }
 
+    /**
+     * Valida los campos de contraseña
+     * @param password la contraseña
+     * @param repeat la segunda contraseña
+     * @return
+     */
     private static boolean isValidPassword(char[] password , char[] repeat){
 
         if(!Arrays.equals(password, repeat)){

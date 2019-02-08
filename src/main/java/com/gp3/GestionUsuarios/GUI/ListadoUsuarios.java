@@ -126,6 +126,9 @@ public class ListadoUsuarios extends JFrame{
         setLocationRelativeTo(null);
     }
 
+    /**
+     * Cambia el LookAndFeel al nativo del systema
+     */
     private void nativeLookAndFeel(){
 
         try {

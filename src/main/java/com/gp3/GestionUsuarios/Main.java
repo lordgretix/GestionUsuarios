@@ -13,6 +13,7 @@ public class Main {
     public final static Logger LOGGER = LogManager.getLogger("com.gp3.GestionUsuarios.Main");
 
     public static void main(String[] args) {
+        //Quitar logs restantes de c3p0
         System.setProperty("com.mchange.v2.log.FallbackMLog.DEFAULT_CUTOFF_LEVEL", "WARNING");
         System.setProperty("com.mchange.v2.log.MLog", "com.mchange.v2.log.FallbackMLog");
 

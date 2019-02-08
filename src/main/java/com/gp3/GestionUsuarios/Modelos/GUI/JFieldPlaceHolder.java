@@ -4,6 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
+/**
+ * Clasa custom para crear un PlaceHolder en un JField
+ */
 public class JFieldPlaceHolder implements FocusListener, KeyListener {
 
     private boolean hasValue = false;

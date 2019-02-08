@@ -116,6 +116,9 @@ public class Login extends JFrame{
         this.lblLoading = lblLoading;
     }
 
+    /**
+     * Cambia el LookAndFeel al nativo del systema
+     */
     private void nativeLookAndFeel() {
 
         try {

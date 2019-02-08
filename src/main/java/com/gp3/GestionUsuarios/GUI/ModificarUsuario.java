@@ -148,6 +148,9 @@ public class ModificarUsuario extends JDialog {
 
     }
 
+    /**
+     * Refresca/Establece el los campos de modifcar usuario de la ventana de modificar usuario
+     */
     private void refreshUser() {
         this.user.setUsuario(this.txtUsuario.getText());
         if (this.getCbPassword().isSelected()) {

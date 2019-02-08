@@ -19,6 +19,10 @@ public class UsuariosMannager {
     private static UsuariosMannager manager;
     private static Usuarios loggedUser = null;
 
+    /**
+     * Crea una nueva instancia de UsuariosManager
+     * @return
+     */
     public static UsuariosMannager getInstance(){
 
         if(factory == null){
@@ -37,6 +41,13 @@ public class UsuariosMannager {
         }
     }
 
+    /**
+     * Inicia sesion
+     *
+     * @param username el nombre de usuario
+     * @param password la contraseña
+     * @return
+     */
     public boolean logIn(String username, String password){
         Session session = factory.openSession();
 
@@ -71,15 +82,27 @@ public class UsuariosMannager {
         return logged;
     }
 
+    /**
+     * Cierra la sesion
+     */
     public void logOut(){
         LOGGER.info("Session Finalizada (Username: "+loggedUser.getUsuario()+")");
         loggedUser = null;
     }
 
+    /**
+     * Comprueba si esta logeado
+     *
+     * @return
+     */
     public static boolean isLogged(){
         return loggedUser != null;
     }
 
+    /**
+     * Comprueba si existe alguna factory de Hibernate
+     * @return
+     */
     public static boolean isFactorySet(){
         return factory != null;
     }
@@ -111,6 +134,13 @@ public class UsuariosMannager {
         return usuarios;
     }
 
+
+    /**
+     * Obtiene un usuario por medio de su ID
+     *
+     * @param id el id del usuario
+     * @return devuelve el Usuario
+     */
     public Usuarios getUsuario(int id){
         Session session = factory.openSession();
         Transaction trans = null;
@@ -133,6 +163,12 @@ public class UsuariosMannager {
         return user;
     }
 
+    /**
+     * Parsea el rol de usuario de int a String
+     *
+     * @param role el role del usuario
+     * @return
+     */
     public String getRoleAsString(int role){
         switch (role){
             case 1: return "Admin";
@@ -142,6 +178,10 @@ public class UsuariosMannager {
         return null;
     }
 
+    /**
+     * Actualiza/modifica un usuario
+     * @param user
+     */
     public void updateUsuario(Usuarios user){
         Session session = factory.openSession();
         Transaction trans = null;
@@ -161,6 +201,10 @@ public class UsuariosMannager {
         }
     }
 
+    /**
+     * Crea un nuevo usuario
+     * @param user
+     */
     public void createUsuario(Usuarios user){
         Session session = factory.openSession();
         Transaction trans = null;
@@ -182,6 +226,10 @@ public class UsuariosMannager {
         }
     }
 
+    /**
+     * Elimina un usuario
+     * @param user
+     */
     public void removeUsuario(Usuarios user){
         Session session = factory.openSession();
         Transaction trans = null;
@@ -201,6 +249,9 @@ public class UsuariosMannager {
         }
     }
 
+    /**
+     * Cierra el factory de hibernate y la session del usuario
+     */
     public void closeFactory(){
         logOut();
         factory.close();
